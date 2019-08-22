@@ -1,0 +1,20 @@
+{
+  "root": true,         //tells eslint this is project root, don't look in other parent folders which if they find a config file can cause odd behaviour
+  "extends": [
+    "eslint:recommended",       //eslint recommmended rules
+    "plugin:import/errors",     //enhanced linting for es6 imports
+    "plugin:import/warnings"    //we will find out about invalid import statement upon save
+  ],
+  "parserOptions": {          //defines version of js in use
+    "ecmaVersion": 7,         //ES7,ES2016
+    "sourceType": "module"    //Declaring that we are using std js modules
+  },
+  "env": {                    //declares different env that eslint should be aware of, tells eslint to expect certain global vars
+    "browser": true,
+    "node": true,
+    "mocha": true             //for testing
+  },
+  "rules": {                  //define any rules that we want to override eslint std rules
+    "no-console": 1           //0 means off, 1 means warning, 2 means error
+  }
+}

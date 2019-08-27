@@ -9,11 +9,11 @@ describe('Our first test', () => {
 });
 
 describe('index.html', () => {
-  it('should say hello', (done) => {                                      //confirm that the markup is there
+  it('should have h1 that says users', (done) => {                                      //confirm that the markup is there
     const index = fs.readFileSync('./src/index.html', "utf-8");       //get ref to index.html file, contents of our html file held in mem by const index
     jsdom.env(index, function(err, window) {
       const h1 = window.document.getElementsByTagName('h1')[0];
-      expect(h1.innerHTML).to.equal("Hello World");
+      expect(h1.innerHTML).to.equal("Users");
       done();
       window.close();                                          //close window to save up mem
     });                                                       //now use jsdom, defining the jsdom environment, passing in index.html
